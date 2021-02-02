@@ -38,6 +38,6 @@ const devEnv = {
 
 const app = new cdk.App();
 
-const stackName = app.node.tryGetContext('stackName') || 'cdk-serverless-demo-stack'
+const stackName = app.node.tryGetContext('stackName') || 'cdk-serverless-demo-stack';
 
 new MyStack(app, stackName, { env: devEnv });

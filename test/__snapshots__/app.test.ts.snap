@@ -39,29 +39,13 @@ Object {
             Array [
               "integrations/",
               Object {
-                "Ref": "ApiDefaultRouteDefaultRouteIntegrationABD448B2",
+                "Ref": "ApiHttpIntegration9bb1bb53033c535aed89393fa01a28e52BA7211C",
               },
             ],
           ],
         },
       },
       "Type": "AWS::ApiGatewayV2::Route",
-    },
-    "ApiDefaultRouteDefaultRouteIntegrationABD448B2": Object {
-      "Properties": Object {
-        "ApiId": Object {
-          "Ref": "ApiF70053CD",
-        },
-        "IntegrationType": "AWS_PROXY",
-        "IntegrationUri": Object {
-          "Fn::GetAtt": Array [
-            "MyFunc8A243A2C",
-            "Arn",
-          ],
-        },
-        "PayloadFormatVersion": "2.0",
-      },
-      "Type": "AWS::ApiGatewayV2::Integration",
     },
     "ApiDefaultRoutetestApiDefaultRouteEA9ADC36Permission4971991E": Object {
       "Properties": Object {
@@ -116,6 +100,22 @@ Object {
         "ProtocolType": "HTTP",
       },
       "Type": "AWS::ApiGatewayV2::Api",
+    },
+    "ApiHttpIntegration9bb1bb53033c535aed89393fa01a28e52BA7211C": Object {
+      "Properties": Object {
+        "ApiId": Object {
+          "Ref": "ApiF70053CD",
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": Object {
+          "Fn::GetAtt": Array [
+            "MyFunc8A243A2C",
+            "Arn",
+          ],
+        },
+        "PayloadFormatVersion": "2.0",
+      },
+      "Type": "AWS::ApiGatewayV2::Integration",
     },
     "MyFunc8A243A2C": Object {
       "DependsOn": Array [
