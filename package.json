@@ -5,8 +5,6 @@
     "url": "https://github.com/pahud/aws-cdk-serverless-sample.git"
   },
   "scripts": {
-    "projen": "npx projen",
-    "start": "npx projen start",
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
     "test:compile": "npx projen test:compile",
@@ -17,12 +15,13 @@
     "test:watch": "npx projen test:watch",
     "test:update": "npx projen test:update",
     "projen:upgrade": "npx projen projen:upgrade",
-    "watch": "npx projen watch",
     "eslint": "npx projen eslint",
     "synth": "npx projen synth",
     "deploy": "npx projen deploy",
     "destroy": "npx projen destroy",
-    "diff": "npx projen diff"
+    "diff": "npx projen diff",
+    "projen": "npx projen",
+    "start": "npx projen start"
   },
   "author": {
     "name": "Pahud Hsieh",
@@ -42,7 +41,7 @@
     "jest": "^26.4.2",
     "jest-junit": "^12",
     "json-schema": "^0.2.5",
-    "projen": "^0.16.38",
+    "projen": "^0.17.20",
     "standard-version": "^9",
     "ts-jest": "^26.1.0",
     "ts-node": "^9.0.0",
