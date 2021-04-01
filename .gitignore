@@ -40,7 +40,6 @@ yarn-error.log*
 !/.github/workflows/build.yml
 !/.github/workflows/projenyarnupgrade.yml
 !/.github/workflows/projenyarnupgradeupdatetest.yml
-!/.github/workflows/rebuild-bot.yml
 !/.mergify.yml
 !/.npmignore
 !/.projen/deps.json
@@ -52,6 +51,7 @@ yarn-error.log*
 !/package.json
 !/src
 !/test
+!/tsconfig.eslint.json
 !/tsconfig.jest.json
 !/tsconfig.json
 !version.json
