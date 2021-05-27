@@ -1,5 +1,4 @@
 const { AwsCdkTypeScriptApp } = require('projen');
-const { Automation } = require('projen-automate-it');
 
 const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
@@ -22,12 +21,6 @@ const project = new AwsCdkTypeScriptApp({
     '@aws-cdk/pipelines',
   ],
 });
-
-const automation = new Automation(project, {
-  automationToken: AUTOMATION_TOKEN,
-});
-
-automation.projenYarnUpgrade();
 
 const common_exclude = ['cdk.out', 'cdk.context.json', '.venv', 'images', 'yarn-error.log'];
 project.npmignore.exclude(...common_exclude);
