@@ -32,6 +32,7 @@ Object {
         "ApiId": Object {
           "Ref": "ApiF70053CD",
         },
+        "AuthorizationType": "NONE",
         "RouteKey": "$default",
         "Target": Object {
           "Fn::Join": Array [
