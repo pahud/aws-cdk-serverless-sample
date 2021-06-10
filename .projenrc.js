@@ -1,4 +1,4 @@
-const { AwsCdkTypeScriptApp } = require('projen');
+const { AwsCdkTypeScriptApp, DependenciesUpgradeMechanism } = require('projen');
 
 const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
@@ -8,9 +8,17 @@ const project = new AwsCdkTypeScriptApp({
   authorName: 'Pahud Hsieh',
   authorEmail: 'pahudnet@gmail.com',
   repository: 'https://github.com/pahud/aws-cdk-serverless-sample.git',
-  dependabot: false,
+  depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
+    workflowOptions: {
+      labels: ['auto-approve', 'auto-merge'],
+      secret: AUTOMATION_TOKEN,
+    },
+  }),
+  autoApproveOptions: {
+    secret: 'GITHUB_TOKEN',
+    allowedUsernames: ['pahud'],
+  },
   defaultReleaseBranch: 'main',
-  devDeps: ['projen-automate-it'],
   cdkDependencies: [
     '@aws-cdk/core',
     '@aws-cdk/aws-apigatewayv2',
@@ -20,6 +28,9 @@ const project = new AwsCdkTypeScriptApp({
     '@aws-cdk/aws-lambda',
     '@aws-cdk/pipelines',
   ],
+});
+project.package.addField('resolutions', {
+  'trim-newlines': '3.0.1',
 });
 
 const common_exclude = ['cdk.out', 'cdk.context.json', '.venv', 'images', 'yarn-error.log'];
