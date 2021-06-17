@@ -45,7 +45,7 @@
     "projen": "^0.23.1",
     "ts-jest": "^26.5.6",
     "ts-node": "^9",
-    "typescript": "^3.9.9"
+    "typescript": "^3.9.10"
   },
   "dependencies": {
     "@aws-cdk/assert": "^1.96.0",
